@@ -1,0 +1,17 @@
+server:
+  port: 8078
+
+spring:
+  application:
+    name: identity
+  main:
+    banner-mode: off
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/entity2
+    username: postgres
+    password: password
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: create
