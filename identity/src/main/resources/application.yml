@@ -1,0 +1,12 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: identity
+  main:
+    banner-mode: off
+  security:
+    oauth2:
+      authorizationserver:
+        provider-name: http://localhost:8081

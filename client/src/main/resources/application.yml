@@ -1,2 +1,23 @@
 server:
   port: 8080
+
+spring:
+  application:
+    name: client
+  main:
+    banner-mode: off
+  security:
+    oauth2:
+      client:
+        registration:
+          client-grant-type:
+            provider: spring
+            client-id: client
+            client-secret: 123456
+            authorization-grant-type: client_credentials
+            redirect-uri: "http://localhost:8080/authorized"
+            scope: CLIENT
+            client-name: client
+        provider:
+          spring:
+            issuer-uri: http://localhost:8081
