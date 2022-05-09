@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: identity
+    name: entity1
   main:
     banner-mode: off
   datasource:

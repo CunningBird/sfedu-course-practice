@@ -5,4 +5,6 @@ include("entity2")
 
 include("gateway")
 
+include("identity")
+
 include("client")

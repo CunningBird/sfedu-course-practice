@@ -15,22 +15,12 @@ repositories {
     mavenCentral()
 }
 
-extra["springCloudVersion"] = "2021.0.1"
-
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-web")
-    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("org.springframework.boot:spring-boot-starter")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
-    implementation("org.springframework.boot:spring-boot-starter-oauth2-client")
-    testImplementation("org.springframework.boot:spring-boot-starter-test")
-}
-
-dependencyManagement {
-    imports {
-        mavenBom("org.springframework.cloud:spring-cloud-dependencies:${property("springCloudVersion")}")
-    }
+    implementation("org.springframework.boot:spring-boot-starter-web:2.6.7")
+    implementation("org.springframework.security:spring-security-oauth2-authorization-server:0.2.3")
 }
 
 tasks.withType<KotlinCompile> {
@@ -38,8 +28,4 @@ tasks.withType<KotlinCompile> {
         freeCompilerArgs = listOf("-Xjsr305=strict")
         jvmTarget = "17"
     }
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }
