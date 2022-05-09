@@ -1,0 +1,19 @@
+server:
+  port: 8079
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: entity2
+          uri: http://localhost:8077
+          predicates:
+            - Path=/entity2/**
+          filters:
+            - StripPrefix=1
+        - id: entity1
+          uri: http://localhost:8078
+          predicates:
+            - Path=/entity1/**
+          filters:
+            - StripPrefix=1

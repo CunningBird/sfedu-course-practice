@@ -13,7 +13,7 @@ class Entity1Service(
         return repository.findAll()
     }
 
-    fun get(id: Long): Entity1? {
+    fun get(id: Long): Entity1 {
         return repository.findById(id).orElseThrow { Exception("Entity not found") }
     }
 
